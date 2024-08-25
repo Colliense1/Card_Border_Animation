@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #131212;
+}
+
+.card {
+    height: 250px;
+    width: 250px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 9px 9px 18px #8d8d8d, inset -9px -9px 18px #ffffff;
+    border-radius: 16px;
+}
+
+.card::before {
+    height: 150%;
+    width: 150%;
+    content: '';
+    position: absolute;
+    background-image: conic-gradient(#e60606 20deg, transparent 150deg);
+    animation: animated 1.5s linear infinite;
+}
+
+@keyframes animated {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+.card::after {
+    height: 238px;
+    width: 238px;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    content: 'Border Animation';
+    background: #f8f8f8;
+    color: #e60606;
+    font-size: 25px;
+    font-weight: 600;
+    box-shadow: inset 9px 9px 18px #8d8d8d, inset -9px -9px 18px #ffffff;
+    border-radius: 10px;
+}
